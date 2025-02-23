@@ -4,7 +4,7 @@ This is a PyTorch implementation of the grokking phenomenon, where
 neural networks exhibit a phase transition in generalization
 performance during training.
 
-NOTE: this repo is a Pytorch port of the Grokking Modular Arithmetic - written in MLX by ![grokking_run_example.png](Jason Stock) - available on ![https://github.com/stockeh/mlx-grokking](https://github.com/stockeh/mlx-grokking)
+**NOTE: this repo is a Pytorch port of the Grokking Modular Arithmetic - written in MLX by [Jason Stock](https://github.com/stockeh) - available on [https://github.com/stockeh/mlx-grokking](https://github.com/stockeh/mlx-grokking)**
 
 ## Overview
 
