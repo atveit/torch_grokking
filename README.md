@@ -6,6 +6,13 @@ performance during training.
 
 **NOTE: this repo is a Pytorch port of the Grokking Modular Arithmetic - written in MLX by [Jason Stock](https://github.com/stockeh) - available on [https://github.com/stockeh/mlx-grokking](https://github.com/stockeh/mlx-grokking)**
 
+## Default Usage 
+
+```bash
+python main.py 
+```
+This should generate a plot similar to the one below.
+
 ## Overview
 
 The implementation includes:
@@ -20,7 +27,7 @@ Below is an example of the grokking phenomenon, where the model suddenly "groks"
 
 ![Training Progress](media/grokking_run_example.png)
 
-## Usage
+## Usage Options
 
 ```bash
 python main.py [--operation /] [--prime 97] [--train-fraction 0.5] [--depth 2] [--dim 128] [--heads 1] [--dropout 0.2] [--epochs 150] [--batch-size 512] [--lr 1e-3] [--weight-decay 1.0] [--beta1 0.9] [--beta2 0.98] [--warmup 10]
