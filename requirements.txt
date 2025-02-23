@@ -1,0 +1,5 @@
+torch>=2.0.0
+torchtune>=0.1.0  # for RotaryPositionalEmbeddings
+numpy>=1.24.0
+matplotlib>=3.7.0
+tqdm>=4.65.0
