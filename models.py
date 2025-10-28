@@ -98,15 +98,15 @@ class BlockTorch(nn_torch.Module):
 
     def _causal_mask(self, n):
         # shape: (1, 1, n, n) for broadcasting in multi-head attention
-        # or simply (1, n, n). We'll do (1, n, n):
+        # Required for torch.export compatibility with shape inference
         mask = torch.triu(torch.full((n, n), float('-inf')), diagonal=1)
-        return mask
+        return mask.unsqueeze(0).unsqueeze(0)  # (n, n) -> (1, 1, n, n)
 
     def forward(self, x):
         # x: (b, n, d)
         b, n, d = x.shape
-        # Expand mask to (b, 1, n, n) if needed:
-        mask = self._mask.unsqueeze(0)  # (1, n, n)
+        # Mask is already (1, 1, n, n) and broadcasts across batch and heads
+        mask = self._mask  # (1, 1, n, n)
         # attn
         x = x + self.attn(x, mask=mask)
         x = x + self.ff(x)
